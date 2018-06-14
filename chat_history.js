@@ -23,4 +23,4 @@ module.exports={
 			   socket.emit("chat_history",chat_details);
 		  }); 
 	}
-}
+} //this is history
