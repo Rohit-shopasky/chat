@@ -56,7 +56,22 @@ convert_to_string:function convert_to_string(int_value)
                  },
              data:{name:result[0].name,"image_url":result[0].image_url,"text":result[0].text,"chat_detail_id":chat_detail_id,
 			 chat_room_id:chat_room_id,sender_id:sender_id,receiver_id:receiver_id,sent_at:sent_at,delivered_at:delivered_at,seen_at:seen_at,attachment_type:attachment_type,attachment_url:attachment_url,message_status:message_status,created_at,created_at,updated_at},
-             token: registrationToken
+             token: registrationToken,
+			 
+			 android: {   // android push notification
+                   ttl: 3600 * 1000,
+                      notification: {
+                                        icon: 'stock_ticker_update',
+                                         color: '#f45342',
+                                    },
+                         },
+                apns: {               // sending push notification for apple devices
+                payload: {
+                     aps: {
+                           badge: 42,
+                          },
+                        },
+                     },
              };
 
              admin.messaging().send(message)
